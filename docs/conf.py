@@ -40,6 +40,7 @@ suppress_warnings = ["image.nonlocal_uri"]
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    "myst_parser",
     "sphinx.ext.autodoc",
     "sphinx.ext.coverage",
     "sphinx.ext.doctest",
@@ -57,7 +58,10 @@ templates_path = ["_templates"]
 # You can specify multiple suffix as a list of string:
 #
 # source_suffix = ['.rst', '.md']
-source_suffix = ".rst"
+source_suffix = [".rst", ".md"]
+
+# Allow using ::: in markdown files
+myst_enable_extensions = ["colon_fence"]
 
 # The master toctree document.
 master_doc = "index"
